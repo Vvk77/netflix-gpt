@@ -7,6 +7,9 @@
 
 # Create-react-app
 -Configured tailwind CSS 
+-Header
+-Login form 
+-Sign up form 
 
 
 
