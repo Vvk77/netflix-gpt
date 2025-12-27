@@ -10,6 +10,32 @@
 -Header
 -Login form 
 -Sign up form 
+-useRef
+-Form validation
+-Firebase setup
+- Deployed our app to production.
+-create sign up user account.
+-Impplemented Sign-In user API
+-create redux store with userSlice.
+- Implemented Sign out 
+-Update profile
+-Bug fix; Sign up user Display name.
+-Bug fix- If the user is not logged Redirect them to home or Login page.
+-Unsuscribed to the onAuthStateChanged call back 
+-Add hardcoded values to the constants files.
+-Register TMDB API & crate app& access token.
+-GET data from TMDB now playing movies list API.
+-Custom hooks for now playing movies.
+-Create movie Slice
+-Update store with movie data.
+-Planing for aind and secondary container.
+-Fetch data for trailer video.
+-Update store with trailer video.
+-Embedded the youtube video and make it autoplay.
+- Taileind classed to lookmain container aawesome.
+
+
+
 
 
 
