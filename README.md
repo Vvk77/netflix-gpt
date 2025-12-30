@@ -32,7 +32,13 @@
 -Fetch data for trailer video.
 -Update store with trailer video.
 -Embedded the youtube video and make it autoplay.
-- Taileind classed to lookmain container aawesome.
+- Tailwind classes to make main container look awesome.
+-Build Secondary container.
+-Build Movie Card.
+-TMDB image CDN URL.
+-Make the browse page looks awesome.
+-Make custom hooks.
+
 
 
 

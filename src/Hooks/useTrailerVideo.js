@@ -30,7 +30,7 @@ console.log("movieID:", movieID);
 
     const filterTrailer = json.results.filter((movie) => movie.type === "Trailer")
     const trailerVideo = filterTrailer.length ? filterTrailer[0] : json.results[0]
-    console.log("Trailer"  , trailerVideo)
+    // console.log("Trailer"  , trailerVideo)
     dispatch(addTrailerVideo(trailerVideo))
  } 
 

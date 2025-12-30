@@ -100,7 +100,7 @@ signOut(auth).then(() => {
       </div>
 }
     </div>
-    </div>
+
   );
 };
 

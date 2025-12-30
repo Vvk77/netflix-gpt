@@ -7,31 +7,28 @@ import VideoTitle from "./VideoTitle";
 
 
 
-const MainContainer = () => {
+  const MainContainer = () => {
+  const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
-const movies = useSelector((store) => store.movies?.nowPlayingMovies)
+  if (!movies) return null;
 
+  const mainMovie = movies[1];
+  const { original_title, overview, id } = mainMovie;
 
-if(!movies) return ;
-
-const mainMovies = movies[6]
-// console.log(mainMovies)
-
-
-const {original_title , overview , id  } = mainMovies
   return (
-    <div>
+    <div className="relative w-full h-screen">
+      {/* Title should be ABOVE video */}
+      <VideoTitle
+        title={original_title}
+        description={overview}
+      />
 
- <VideoTitle  title={original_title} description={overview} />
-        <VideoBackgorund  movieID={id}/>
-       
-      
-        
-        
-    
-    
+      {/* Background video */}
+      <VideoBackgorund movieID={id} />
     </div>
-  )
-}
+  );
+};
+
+
 
 export default MainContainer
