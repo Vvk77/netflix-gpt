@@ -11,7 +11,10 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser,removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
-import { LOGO,UserIcon } from "../utils/constants";
+import { LOGO,SUPPORTED_LANG,UserIcon } from "../utils/constants";
+import { toggleGPTSearch } from "../utils/GptSlice";
+import { changeLanguage } from "../utils/configSlice";
+import { useRef } from "react";
 
 
 
@@ -20,7 +23,21 @@ const Header = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    const selectRef  = useRef(null)
+
     const user = useSelector((store) => store.user)
+      const gptSearch  = useSelector((store) => store.gpt.showGptSearch)
+
+
+
+
+      function handleChange (){
+   
+        dispatch(changeLanguage(selectRef.current.value))
+
+      }
+
 
     
 useEffect(() => {
@@ -50,7 +67,11 @@ const Unsuscribe = onAuthStateChanged(auth, (user) => {
 
 
     
+function handleGPTSearchClick (){
+  dispatch(toggleGPTSearch())
+ 
 
+}
     
 
 function handleSignOut (){
@@ -77,7 +98,7 @@ signOut(auth).then(() => {
 
   return (
    
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between items-center">
+<div className="fixed top-0 left-0 px-8 py-2 bg-gradient-to-b from-black z-50 w-full flex justify-between items-center">
       
       {/* Netflix Logo */}
       <img
@@ -88,11 +109,24 @@ signOut(auth).then(() => {
 
       {/* User section */}
       { user && <div className="flex items-center gap-4">
+
+        {gptSearch &&  <select className="p-2 m-2 bg-gray-900 text-white" onChange={handleChange}  ref={selectRef} >
+{
+  SUPPORTED_LANG.map((lan) => <option key={lan.identifier} value={lan.identifier}> {lan.name} </option> )
+}
+
+        
+        </select> }
+
+       
+
+<button  className= "bg-purple-500 py-2 px-4 mx-4 my-2 text-white rounded-lg"onClick={handleGPTSearchClick}> {gptSearch ? "HomePage" : "GPT Search"}</button>
+
         <img
           className="w-14 h-14 rounded-full cursor-pointer border border-red-600"
           src={UserIcon}
           alt="user icon"
-        />
+        /> 
 
         <button onClick={handleSignOut}className="text-white border border-red-600 px-4 py-2 rounded-md hover:bg-red-600 transition">
           Sign Out
@@ -105,3 +139,7 @@ signOut(auth).then(() => {
 };
 
 export default Header;
+
+
+
+

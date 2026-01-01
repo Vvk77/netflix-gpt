@@ -7,6 +7,7 @@ import { auth } from "../utils/firebase";
 
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMG } from "../utils/constants";
 
 
 
@@ -130,8 +131,7 @@ signInWithEmailAndPassword(auth,email.current.value, password.current.value)
   return (
     <div><Header/>
     <div className="absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/6d631aa6-567d-46ef-a644-b5b00e4334d2/web/IN-en-20251215-TRIFECTA-perspective_f1cab02a-e42b-4913-a7d9-c5fe0f94f68d_large.jpg" alt="Logo"/>
-        
+        <img src={BG_IMG}/>
 
 
     </div>

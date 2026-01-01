@@ -38,6 +38,10 @@
 -TMDB image CDN URL.
 -Make the browse page looks awesome.
 -Make custom hooks.
+- GPT search Page.
+-GPT search bar.
+-Multi language feature.
+
 
 
 

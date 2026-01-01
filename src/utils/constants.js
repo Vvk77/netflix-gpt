@@ -19,3 +19,9 @@ export const API_OPTIONS = {
 
 
 export const IMAGE_CDN = "https://image.tmdb.org/t/p/w200/"
+
+
+export const BG_IMG ="https://assets.nflxext.com/ffe/siteui/vlv3/6d631aa6-567d-46ef-a644-b5b00e4334d2/web/IN-en-20251215-TRIFECTA-perspective_f1cab02a-e42b-4913-a7d9-c5fe0f94f68d_large.jpg"
+
+
+    export  const SUPPORTED_LANG  = [{identifier: "en" ,name: "English "},{identifier: "hindi" ,name: "Hindi "},{identifier: "spanish" ,name: "Spanish "}]
