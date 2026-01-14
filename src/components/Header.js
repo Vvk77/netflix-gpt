@@ -15,7 +15,7 @@ import { LOGO,SUPPORTED_LANG,UserIcon } from "../utils/constants";
 import { toggleGPTSearch } from "../utils/GptSlice";
 import { changeLanguage } from "../utils/configSlice";
 import { useRef } from "react";
-
+import { clearGptData } from "../utils/GptSlice";
 
 
 
@@ -67,11 +67,15 @@ const Unsuscribe = onAuthStateChanged(auth, (user) => {
 
 
     
-function handleGPTSearchClick (){
-  dispatch(toggleGPTSearch())
- 
+function handleGPTSearchClick() {
 
+  if (gptSearch) {
+    dispatch(clearGptData());
+  }
+
+  dispatch(toggleGPTSearch());
 }
+
     
 
 function handleSignOut (){
@@ -98,11 +102,11 @@ signOut(auth).then(() => {
 
   return (
    
-<div className="fixed top-0 left-0 px-8 py-2 bg-gradient-to-b from-black z-50 w-full flex justify-between items-center">
+<div className="fixed top-0 left-0 px-8 py-2 bg-gradient-to-b from-black z-50 w-full flex justify-between items-center flex-col md:flex-row">
       
       {/* Netflix Logo */}
       <img
-        className="w-44"
+        className="w-44 mx-auto md:mx-0"
         src={LOGO}
         alt="logo"
       />
@@ -120,7 +124,11 @@ signOut(auth).then(() => {
 
        
 
-<button  className= "bg-purple-500 py-2 px-4 mx-4 my-2 text-white rounded-lg"onClick={handleGPTSearchClick}> {gptSearch ? "HomePage" : "GPT Search"}</button>
+<button  className= "bg-purple-500 py-2 px-4 mx-4 my-2 text-white rounded-lg"onClick={handleGPTSearchClick}> {gptSearch ? "HomePage" : "GPT Search"}
+
+
+
+</button>
 
         <img
           className="w-14 h-14 rounded-full cursor-pointer border border-red-600"

@@ -20,7 +20,7 @@ const Moviecard = ({posterPath , movieID}) => {
 
 
    
-    <div className="w-40 pr-6 ">
+    <div className=" w-36 md:w-40 pr-6 ">
        <Link to={`/movietrailer/${movieID}`}>
         <img alt="movie-card"
         src={IMAGE_CDN + posterPath}/>

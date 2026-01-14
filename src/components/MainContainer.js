@@ -16,7 +16,7 @@ import VideoTitle from "./VideoTitle";
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen ">
       {/* Title should be ABOVE video */}
       <VideoTitle
         title={original_title}
